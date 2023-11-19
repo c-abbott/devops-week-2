@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
   pull_request:
-    branches: [main]
+    branches: "*"
 
 jobs:
   test-quote-gen:
@@ -20,12 +20,11 @@ jobs:
 
       - name: Install Dependencies for quote-gen
         run: |
-          cd quote-gen
+          cd quote_gen
           python -m pip install -r requirements.txt
 
       - name: Run tests for quote-gen
         run: |
-          cd quote-gen
           python -m unittest discover -s tests
 
   test-quote-disp:
@@ -42,10 +41,9 @@ jobs:
 
       - name: Install Dependencies for quote-disp
         run: |
-          cd quote-disp
+          cd quote_disp
           python -m pip install -r requirements.txt
 
       - name: Run tests for quote-disp
         run: |
-          cd quote-disp
           python -m unittest discover -s tests
