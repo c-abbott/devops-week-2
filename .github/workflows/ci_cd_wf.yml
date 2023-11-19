@@ -25,7 +25,6 @@ jobs:
 
       - name: Run tests for quote-gen
         run: |
-          cd quote_gen
           python -m unittest discover -s tests
 
   test-quote-disp:
@@ -47,5 +46,4 @@ jobs:
 
       - name: Run tests for quote-disp
         run: |
-          cd quote_disp
           python -m unittest discover -s tests
