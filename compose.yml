@@ -5,10 +5,19 @@ services:
     container_name: quote-gen-container
     ports:
       - "5000:5000"
+    volumes:
+      - web1_data:/app/data 
+
   web2:
     build: ./quote_disp
     container_name: quote-disp-container
     ports:
       - "5001:5001"
+    volumes:
+      - web2_data:/app/data  
     depends_on:
       - web1
+
+volumes:
+  web1_data: 
+  web2_data: 
